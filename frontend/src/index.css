@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #050505;
+    color: #f8f8f8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    border-color: #1c1c1c;
+  }
+
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer utilities {
+  .card {
+    @apply bg-rite-card border border-rite-border rounded-2xl;
+  }
+
+  .btn {
+    @apply px-5 py-2.5 rounded-xl font-semibold transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-rite-orange text-black hover:bg-orange-400 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply btn border border-rite-border text-gray-300 hover:border-rite-orange hover:text-rite-orange;
+  }
+
+  .btn-ghost {
+    @apply btn text-gray-400 hover:text-white hover:bg-rite-muted;
+  }
+
+  .input-field {
+    @apply w-full bg-rite-bg border border-rite-border rounded-xl px-4 py-3
+           text-white placeholder:text-gray-600
+           focus:outline-none focus:border-rite-orange/60 focus:ring-1 focus:ring-rite-orange/30
+           transition-colors;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium;
+  }
+}
